@@ -6,9 +6,13 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<input type="text">
-<button>Создать</button>
-
+	<div id="app">
+		<input type="text" v-model="pageName">
+		<button @click="createPage">Создать</button>
+		<div v-for="(page, index) in pages">
+			<h1>{{index + 1}}.) {{page}} <a href="#" @click="deletePage(page)">( X )</a></h1>
+		</div>
+	</div>
 
 <script src='bundle.js'></script>
 </body>
